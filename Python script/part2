@@ -1,0 +1,43 @@
+# 1. Read workout data from a CSV file
+workout = read_file('data/workout.csv')  
+
+# 2. Assess global interest in fitness by resampling the data to a monthly frequency and calculating the mean
+workout_by_month = workout.set_index('week').resample('MS').mean()  
+
+# Find the month(s) with the highest average interest in fitness
+month_high = workout_by_month[workout_by_month['interest']==workout_by_month['interest'].max()]
+
+# Convert the index (month) of the highest interest to a string in 'YYYY-MM-DD' format
+month_str = str(month_high.index[0].date())
+
+# 3. Compare interest in home workouts, gym workouts, and home gyms by reading the relevant data
+workout = read_file('data/three_keywords.csv') 
+current = 'gym workout'  # Current interest keyword
+peak_covid = 'home workout'  # Interest keyword during the peak of COVID-19
+
+# 4. Segment global interest by region by reading geographical data
+workout_global = read_geo('data/workout_global.csv')
+
+# Extract the top 25 rows from the DataFrame to identify top countries interested in workouts
+top_25_countries = workout_global.head(25)
+
+# Retrieve the country name from the first row of the top 25 countries DataFrame
+top_country = top_25_countries['country'].iloc[0]
+
+# 5. Assess regional demand for home workouts, gym workouts, and home gyms by reading geographical data with multiple categories
+geo_categories = read_geo('data/geo_three_keywords.csv', multi=True)
+
+# Define a list of countries in the Middle East and South Asia (MESA) with high interest in workout-related activities
+MESA_countries = ["Philippines", "Singapore", "United Arab Emirates", "Qatar", "Kuwait", "Malaysia", "Sri Lanka", "India", "Pakistan", "Lebanon"]
+
+# Filter the DataFrame to include only the rows corresponding to the MESA countries
+MESA = geo_categories.loc[geo_categories.country.isin(MESA_countries), :]
+
+# 6. Assess the split of interest by country and category in the MESA region
+MESA.set_index(['country','category']).unstack()  
+top_home_workout_country = 'Philippines'  # Country with the highest interest in home workouts
+
+# 7. A deeper dive into two countries' interests in yoga and zumba by reading their respective data
+read_file('data/yoga_zumba_sng.csv')  # Data for Singapore
+read_file('data/yoga_zumba_phl.csv')  # Data for the Philippines
+pilot_content = ['yoga', 'zumba']  # Keywords for pilot content
