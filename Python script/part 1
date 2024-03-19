@@ -1,0 +1,45 @@
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+sns.set(style='white', palette='Pastel2')
+import os
+
+def read_file(filepath, plot = True):
+    """
+    Read a CSV file from a given filepath, convert it into a pandas DataFrame,
+    and return a processed DataFrame with three columns: 'week', 'region', and 'interest'. Generate a line plot using Seaborn to visualize the data. This corresponds to the first graphic (time series) returned by trends.google.com. 
+    """
+    file = pd.read_csv(filepath, header=1)
+    df = file.set_index('Week').stack().reset_index()
+    df.columns = ['week','region','interest']
+    df['week'] = pd.to_datetime(df['week'])
+    plt.figure(figsize=(8,3))
+    df = df[df['interest']!="<1"]
+    df['interest'] = df['interest'].astype(float)
+
+    if plot:
+        sns.lineplot(data = df, x= 'week', y= 'interest',hue='region')
+    return df
+
+def read_geo(filepath, multi=False):
+    """
+    Read a CSV file from a given filepath, convert it into a pandas DataFrame,
+    and return a processed DataFrame with two columns: 'country' and 'interest'. Generate a bar plot using Seaborn to visualize the data. This corresponds to the second graphic returned by trends.google.com. Use multi=False if only one keyword is being analyzed, and multi=True if more than one keyword is being analyzed.
+    """
+    file = pd.read_csv(filepath, header=1)
+
+    if not multi:
+        file.columns = ['country', 'interest']
+        plt.figure(figsize=(8,4))
+        sns.barplot(data = file.dropna().iloc[:25,:], y = 'country', x='interest')
+
+    if multi:
+        plt.figure(figsize=(3,8))
+        file = file.set_index('Country').stack().reset_index()
+        file.columns = ['country','category','interest']
+        file['interest'] = pd.to_numeric(file['interest'].apply(lambda x: x[:-1]))
+        sns.barplot(data=file.dropna(), y = 'country', x='interest', hue='category')
+
+    file = file.sort_values(ascending=False,by='interest')
+    return file
+    
