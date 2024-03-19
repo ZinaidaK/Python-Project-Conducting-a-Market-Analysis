@@ -1,39 +1,49 @@
 # Python-Project-Conducting-a-Market-Analysis
  ## Data Driven Product Management: Conducting a Market Analysis
  
-This project is about conducting a comprehensive market analysis for a fitness studio based in Singapore, focusing on the development and placement of digital fitness products in the regional market. As the product manager, my goal was to leverage the data available to inform the strategy for introducing new or improved digital products that cater to the needs and interests of potential users. Here's a breakdown of the project objectives and methods:
+This project represents a comprehensive market analysis endeavor conducted by a product manager at a fitness studio based in Singapore. The overarching goal is to leverage data-driven insights to inform the development and placement of digital fitness products within the regional market. This analysis is pivotal for identifying competitive strengths, gauging market demand, and crafting unique digital offerings that resonate with potential users. Here's a breakdown of the project's facets:
 
-### **Objectives:**
+### **Goal and Objectives:**
 
-**Understand Digital Product Opportunities:** Identify what types of digital fitness products (e.g., apps, online classes, virtual coaching) would be most appealing to your target audience.Understand Digital Product Opportunities: Identify what types of digital fitness products (e.g., apps, online classes, virtual coaching) would be most appealing to your target audience.
+**Main Goal:** To understand the types of digital fitness products that should be offered, focusing on placement within the regional market.
 
-**Gauge Market Demand:** Assess the overall interest in fitness-related activities and products, with a particular focus on the regional market around Singapore.
-
-**Competitor Analysis:** Identify the strengths and offerings of competitors to find gaps in the market or areas where your products can differentiate.
-
-**Create Unique Offerings:** Based on the insights gathered, propose new digital fitness products or services that meet unaddressed needs or preferences of potential users.
+**Market Analysis Objectives:** 
+- Identify competitive strengths in the digital fitness domain.
+- Gauge global and regional demand for fitness-related activities and products.
+- Develop unique and appealing digital fitness products and services.
 
 ### **Data and Methods:**
 
 **Data Sources:** A CSV files containing international data from Google Trends and YouTube keyword searches related to fitness. This data will help you understand global and regional trends in fitness interests and preferences.
 
-**Helper Functions:** Two provided functions, read_file and read_geo, assist in loading and visualizing this data. These functions are designed to streamline the process of converting raw data into actionable insights.
+**Analysis Tools:** Utilization of pandas for data manipulation, seaborn and matplotlib for visualization, and custom helper functions (read_file and read_geo) to facilitate data loading and initial visualizations.
 
-**Pandas for Data Exploration:** I will use pandas, a powerful Python library for data analysis, to manipulate and analyze the data. This will include filtering, aggregating, and visualizing data to uncover trends and patterns.
-
-**Further Investigation:** Beyond the digital realm, I am encouraged to consider the broader fitness market, including in-person classes, local gyms, and online personal instructors, to identify additional opportunities or synergies.
 
 ### **Steps Involved:**
 
-**Loading and Visualizing Data:** Use the helper functions to load data into pandas DataFrames and generate initial visualizations. This will help you get a sense of the overall trends and the seasonality of interest in fitness-related searches.
+**Loading and Visualizing Data:** The project starts with loading CSV files to examine global interest in fitness over time, using read_file for time series and read_geo for geographical data.
 
 **Assessing Demand and Seasonality:** Determine when fitness interest peaks globally and regionally, which can inform timing for product launches or marketing campaigns.
 
-**Keyword Analysis:** By examining specific keywords, identify what fitness topics are most popular, how interest has shifted over time (e.g., during COVID-19), and what content might be missing in the current market.
+**Keyword Analysis:** A comparison of interest in "home workouts," "gym workouts," and "home gyms" before and during peak COVID times to track shifts in consumer preferences.
 
-**Regional Focus:** Focus on Singapore and surrounding regions to understand local preferences and demands, ensuring your digital products are tailored to the market.
+**Regional Focus:** Disaggregating global demand by region for the three keywords, paying special attention to Middle Eastern and South Asian countries.
 
-**Competitor and Content Analysis:** Identify key competitors and popular fitness content, which can help in developing unique digital products that fill existing gaps or offer something new to the market.
+**Interest Split by Country and Category:** A deeper analysis to evaluate how interest in the three keywords varies across the specified countries, aiming to identify the country with the highest interest in home workouts.
 
-### **Outcome:**
-The outcome of this project should be a well-informed strategy for developing and marketing digital fitness products for your studio. By carefully analyzing the data, you'll be able to propose digital products that not only match the interests and needs of your target audience but also position your studio competitively in the fitness market.
+**Content Type Analysis for Pilot Programs:** Utilizing keyword data to determine popular fitness content types for potential digital product offerings, with a focus on yoga and zumba in Singapore and the Philippines.
+
+
+### **Outcome an Insights:**
+The project culminates in a series of actionable insights derived from meticulous data analysis. Key findings include:
+
+**Seasonal Demand Insights:** Identification of periods with the highest global interest in fitness activities, valuable for timing product launches or marketing campaigns.
+
+**Consumer Preference Shifts:** Insight into how preferences shifted towards home workouts during peak COVID, informing content strategy in response to global events.
+
+**Regional Market Focus:** Highlighting the importance of tailoring digital products to regional preferences, particularly in Middle Eastern and South Asian countries.
+
+**Content Strategy Development:** The analysis supports the development of a pilot content strategy focused on yoga and zumba, based on their popularity in target markets.
+
+
+This project exemplifies how data-driven market analysis can guide strategic decisions in product development and marketing within the fitness industry. By understanding global trends, regional preferences, and competitive landscapes, the fitness studio can position its digital offerings to meet market demands effectively.
