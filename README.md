@@ -1,7 +1,8 @@
 # Python-Project-Conducting-a-Market-Analysis
  ## Data Driven Product Management: Conducting a Market Analysis
- 
-This project represents a comprehensive market analysis endeavor conducted by a product manager at a fitness studio based in Singapore. The overarching goal is to leverage data-driven insights to inform the development and placement of digital fitness products within the regional market. This analysis is pivotal for identifying competitive strengths, gauging market demand, and crafting unique digital offerings that resonate with potential users. Here's a breakdown of the project's facets:
+ ![Fitness](https://github.com/ZinaidaK/Python-Project-Conducting-a-Market-Analysis/assets/100050035/6136fc62-d5ed-429c-8dcd-3931d8478e23)
+
+ This project represents a comprehensive market analysis endeavor conducted by a product manager at a fitness studio based in Singapore. The overarching goal is to leverage data-driven insights to inform the development and placement of digital fitness products within the regional market. This analysis is pivotal for identifying competitive strengths, gauging market demand, and crafting unique digital offerings that resonate with potential users. Here's a breakdown of the project's facets:
 
 ### **Goal and Objectives:**
 
